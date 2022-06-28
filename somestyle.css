@@ -1,0 +1,21 @@
+#tweetDiv {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#choiceButtonDiv {
+    margin-left: 30px;
+}
+
+.single_button_div {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+img{
+    width:300px;
+    height:300px;
+    object-fit:contain
+}
