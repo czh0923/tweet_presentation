@@ -61,5 +61,5 @@ async function submitData() {
 
     await updateVisitedNum(table_tweetUsers);
     console.log("update complete");
-    //goToThanksPage();
+    goToThanksPage();
 }

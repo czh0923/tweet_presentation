@@ -20,7 +20,7 @@ const finalButtonDiv = document.getElementById("finalButtonDiv");
 const finalButton = document.getElementById("finalButton");
 
 
-const presented_user_number = 11;
+const presented_user_number = 5;
 const totalTweeterUsers = 154;
 var tweet_user_names = [];
 var tweet_user_ids = [];
