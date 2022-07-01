@@ -31,8 +31,7 @@ async function insert(target_table, data) {
             await target_table.create(data[i]);
         }
     } catch (e) {
-        console.log("error");
-        //goToErrorPage();
+        goToErrorPage(e);
         return;
     }
 
@@ -48,10 +47,7 @@ async function updateVisitedNum(target_table) {
         }]);
     }
 }
- 
-function goToThanksPage() {
-    document.location.href = "thanks.html";
-}
+
 
 async function submitData() {
 

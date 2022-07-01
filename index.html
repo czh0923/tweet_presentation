@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> This is the home page </title>
-        <script src="airtable.browser.js"></script>
-        <link rel="stylesheet" href="somestyle.css">
-        <link rel="stylesheet" href="progressBar.css">
+        <title> This is the first page </title>
+        <link rel="stylesheet" href="firstpage.css">
     </head>
     <body>
-
-        <div id="progressBarOuter">
-            <div id="progressBarInner"></div>
+        <div id="participantInfoDiv">
+            <label for="participantIdInput"> Participant ID: </label>
+            
+            <input type="text" id="participantIdInput" placeholder="put anything for now"/>
+            <br>
+            <button id="enterButton"> Enter </button>
         </div>
 
-        <div id="tweetDiv"></div>
-        <div id="choiceButtonDiv"></div>
-        <div id="finalButtonDiv">
-            <button id="finalButton"> Next </button>
-        </div>
+        <!-- <div id="participantInfoEnterDiv">
+            <button id="enterButton"> Enter </button>
+        </div> -->
 
         <div>
-            <script src="myConstants.js"></script>
-            <script src="getTweetUsers.js"></script>
-            <script src="dom.js"></script>
-            <script src="getData.js"></script>
-            <script src="submit.js"></script>
-            <script src="nextButton.js"></script>
+            <script type="text/javascript">
+                const enterButton = document.getElementById("enterButton");
+                console.log(enterButton);
+                function clickEnterButton() {
+                    let participantIdInput = document.getElementById("participantIdInput").value;
+                    if (participantIdInput == "") {
+                        alert("You must enter an ID");
+                        return;
+                    }
+                    localStorage.setItem("participantID", participantIdInput);
+                    document.location.href = "dom.html";
+                }
+                enterButton.addEventListener("click", clickEnterButton);
+            </script>
         </div>
 
     </body>
