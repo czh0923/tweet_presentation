@@ -1,8 +1,8 @@
 // connecting to database
 
 const Airtable = require('airtable');
-const base = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appQM4HHXqwvglt66');
-const base_result = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appJjZIZ2XbDCD5Gm');
+const base = new Airtable({apiKey: '${AIRTABLE_API_KEY}'}).base('appQM4HHXqwvglt66');
+const base_result = new Airtable({apiKey: '${AIRTABLE_API_KEY}'}).base('appJjZIZ2XbDCD5Gm');
 
 const table_tweetUsers = base('tweet_user');
 const table_collectedData = base_result('collected_data');
