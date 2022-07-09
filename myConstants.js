@@ -1,15 +1,17 @@
 // connecting to database
 
-const Airtable = require('airtable');
-const base = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appQM4HHXqwvglt66');
-const base_result = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appJjZIZ2XbDCD5Gm');
+// const Airtable = require('airtable');
+// const base = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appQM4HHXqwvglt66');
+// const base_result = new Airtable({apiKey: 'keyQUcYkOoAkjWXTV'}).base('appJjZIZ2XbDCD5Gm');
 
-const table_tweetUsers = base('tweet_user');
-const table_collectedData = base_result('collected_data');
+// const table_tweetUsers = base('tweet_user');
+// const table_collectedData = base_result('collected_data');
 
 
 // constants 
 const presented_number = 10;
+const presentedOriginalNum = 5;
+const presentedLikesNum = 5;
 const buttonNames = ["D", "R", "I", "O"];
 const buttonValues = ["Democrat", "Republican", "Independent", "Other"];
 
