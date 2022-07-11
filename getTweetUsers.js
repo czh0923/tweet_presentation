@@ -1,16 +1,24 @@
-async function getLeastVisitedUser(userNum) {
-    const records = await table_tweetUsers.select({maxRecords: userNum, view: "Grid view"}).firstPage();
+async function getLeastVisitedUser(presentedUserNumber) {
 
-    records.forEach(function(record) {
-        tweet_user_recordIDs.push(record.getId());
-        tweet_user_names.push(record.get('Name'));
-        tweet_user_ids.push(record.get('userID'));
-        tweet_user_prevVisitedTimes.push(record.get('ratedTimes'));
-    })
-
-    console.log("getting tweet users", tweet_user_recordIDs, tweet_user_names, tweet_user_ids, tweet_user_prevVisitedTimes);
+    url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString() + "/tweet_user"
     
-    getTweetsOfTheUser(tweet_user_names[0]);
+    let res = await fetch(url);
+    let data = await res.json();
+
+    let tweetUserRecordIds = data.tweetUserRecordIds;
+    let tweetUserNames = data.tweetUserNames;
+    let tweetUserIds = data.tweetUserIds;
+    let tweetUserPrevVisitedTimes = data.tweetUserPrevVisitedTimes;
+
+    console.log("getting tweet users", tweetUserRecordIds, tweetUserNames, tweetUserIds, tweetUserPrevVisitedTimes);
+
+    localStorage.setItem("tweetUserRecordIds", tweetUserRecordIds);
+    localStorage.setItem("tweetUserNames", tweetUserNames);
+    localStorage.setItem("tweetUserIds", tweetUserIds);
+    localStorage.setItem("tweetUserPrevVisitedTimes", tweetUserPrevVisitedTimes);
+    
+    
+    getTweetsOfTheUser(tweetUserNames[0]);
 }
 
 getLeastVisitedUser(presented_user_number);

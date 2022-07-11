@@ -17,10 +17,15 @@ function renderPic(retrieved_records_url) {
     }
 }
 
-function renderWords(retrieved_records_content) {
-    for (let i = 0; i < presented_number; i++) {
-        // console.log("rendering innerHTML", retrieved_records_content[i]);
-        document.getElementById((i+1).toString() + "Tweet").innerHTML = (i+1).toString() + ". " + retrieved_records_content[i]; // div id starting at 1, not 0
+function renderOriginalWords(retrievedOriginalRecordContent) {
+    for (let i = 0; i < presented_original_num; i++) {
+        document.getElementById((i+1).toString() + "OriginalTweet").innerHTML = (i+1).toString() + ". " + retrievedOriginalRecordContent[i]; 
+    }
+}
+
+function renderLikesWords(retrievedLikedRecordContent) {
+    for (let i = 0; i < presented_likes_num; i++) {
+        document.getElementById((i+1).toString() + "LikesTweet").innerHTML = (i+1).toString() + ". " + retrievedLikedRecordContent[i]; 
     }
 }
 
@@ -28,16 +33,17 @@ function renderWords(retrieved_records_content) {
 // getting tweets and presenting on the webpage
 
 async function getTweetsOfTheUser(userName) {
-    let presentedOriginalNum = 5;
-    let presentedLikesNum = 5;
-    let url = "https://airtable-middle.herokuapp.com/get/" + userName + "/" + presentedOriginalNum.toString() + "/" + presentedLikesNum.toString();
+    let url = "https://airtable-middle.herokuapp.com/get/" + userName + "/" + presented_original_num.toString() + "/" + presented_likes_num.toString();
     
     let res = await fetch(url);
+    let data = await res.json();
 
-    let retrievedOriginalRecordContent = res.retrievedOriginalRecordContent;
-    let retrievedLikedRecordContent = res.retrievedLikedRecordContent;
+    console.log(data);
+
+    let retrievedOriginalRecordContent = data.retrievedOriginalRecordContent;
+    let retrievedLikesRecordContent = data.retrievedLikesRecordContent;
 
     // rendering words
-    renderWords(retrievedOriginalRecordContent + retrievedLikedRecordContent);
+    renderOriginalWords(retrievedOriginalRecordContent);
+    renderLikesWords(retrievedLikesRecordContent);
 }
-getTweetsOfTheUser("user1");

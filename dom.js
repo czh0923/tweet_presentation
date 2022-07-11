@@ -1,34 +1,37 @@
 
 
-function createMainPage(tweetDiv, choiceButtonDiv) {
+function createMainPage(tweetOriginalDiv, tweetLikesDiv, choiceButtonDiv) {
     progressBarInner.style.width = (curPageNum / presented_user_number * 100).toString() + "%";
 
-    for (let i = 0; i < presented_number; i++) {
-        // console.log("building div");
-        createTweetContentParagraph(tweetDiv, i + 1);
+    for (let i = 0; i < presented_original_num; i++) {
+        createSingleOriginalTweetDiv(tweetOriginalDiv, i + 1);
+    }
+
+    for (let i = 0; i < presented_likes_num; i++) {
+        createSingleLikesTweetDiv(tweetLikesDiv, i + 1);
     }
 
     createFourButtons(choiceButtonDiv);
 }
 
-
-function createTweetContentParagraph(tweetDiv, i) {
-
-    // <p id="iTweet">i. </p>
-    // <div id="iAttachmentDiv">
-
+function createSingleOriginalTweetDiv(tweetOriginalDiv, i) {
     let p = document.createElement("p");
-    // p.innerHTML = i.toString() + ". ";
-    p.id = i.toString() + "Tweet";
-    tweetDiv.appendChild(p);
-
-    let attachmentDiv = document.createElement("div");
-    attachmentDiv.id = i.toString() + "AttachmentDiv";
-    tweetDiv.appendChild(attachmentDiv);
+    p.id = i.toString() + "OriginalTweet";
+    tweetOriginalDiv.appendChild(p);
 
     let hr = document.createElement("hr");
-    tweetDiv.appendChild(hr);
+    tweetOriginalDiv.appendChild(hr);
 }
+
+function createSingleLikesTweetDiv(tweetLikesDiv, i) {
+    let p = document.createElement("p");
+    p.id = i.toString() + "LikesTweet";
+    tweetLikesDiv.appendChild(p);
+
+    let hr = document.createElement("hr");
+    tweetLikesDiv.appendChild(hr);
+}
+
 
 function createFourButtons(choiceButtonDiv) {
     // <div id="choiceButtonDiv">
@@ -84,5 +87,5 @@ function createFinalButton(finalButtonDiv) {
     finalButtonDiv.appendChild(finalButton);
 }
  
-createMainPage(tweetDiv, choiceButtonDiv);
+createMainPage(TWEETORIGINALDIV, TWEETLIKESDIV, CHOICEBUTTONDIV);
 

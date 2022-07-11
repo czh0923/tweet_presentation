@@ -3,6 +3,15 @@
     margin-right: 50px;
 }
 
+#tweetOriginalDiv {
+    background-color: rgb(218, 228, 249);
+} 
+
+#tweetLikesDiv {
+    /* background-color: rgb(255, 224, 229); */
+    background-color: rgb(248, 218, 218);
+}
+
 #choiceButtonDiv {
     margin-left: 30px;
 }
