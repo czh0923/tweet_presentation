@@ -12,10 +12,10 @@ async function getLeastVisitedUser(presentedUserNumber) {
 
     console.log("getting tweet users", tweetUserRecordIds, tweetUserNames, tweetUserIds, tweetUserPrevVisitedTimes);
 
-    localStorage.setItem("tweetUserRecordIds", tweetUserRecordIds);
-    localStorage.setItem("tweetUserNames", tweetUserNames);
-    localStorage.setItem("tweetUserIds", tweetUserIds);
-    localStorage.setItem("tweetUserPrevVisitedTimes", tweetUserPrevVisitedTimes);
+    localStorage.setItem("tweetUserRecordIds", JSON.stringify(tweetUserRecordIds));
+    localStorage.setItem("tweetUserNames", JSON.stringify(tweetUserNames));
+    localStorage.setItem("tweetUserIds", JSON.stringify(tweetUserIds));
+    localStorage.setItem("tweetUserPrevVisitedTimes", JSON.stringify(tweetUserPrevVisitedTimes));
     
     
     getTweetsOfTheUser(tweetUserNames[0]);

@@ -1,5 +1,4 @@
 
-
 function createMainPage(tweetOriginalDiv, tweetLikesDiv, choiceButtonDiv) {
     progressBarInner.style.width = (curPageNum / presented_user_number * 100).toString() + "%";
 

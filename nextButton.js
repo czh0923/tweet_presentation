@@ -38,7 +38,7 @@ async function pressNext() {
     } 
 
     curPageNum += 1;
-    getTweetsOfTheUser(tweet_user_names[curPageNum - 1]);
+    getTweetsOfTheUser(JSON.parse(localStorage.getItem("tweetUserNames"))[curPageNum - 1]);
     clearChoiceButton();
     progressBarChange(curPageNum);
 

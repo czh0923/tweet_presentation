@@ -38,8 +38,6 @@ async function getTweetsOfTheUser(userName) {
     let res = await fetch(url);
     let data = await res.json();
 
-    console.log(data);
-
     let retrievedOriginalRecordContent = data.retrievedOriginalRecordContent;
     let retrievedLikesRecordContent = data.retrievedLikesRecordContent;
 
