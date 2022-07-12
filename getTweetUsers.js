@@ -1,6 +1,6 @@
 async function getLeastVisitedUser(presentedUserNumber) {
 
-    url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString() + "/tweet_user"
+    url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString()
     
     let res = await fetch(url);
     let data = await res.json();
