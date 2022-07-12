@@ -1,21 +1,21 @@
 
-function renderPic(retrieved_records_url) {
-    for (let i = 0; i < presented_number; i++) {
+// function renderPic(retrieved_records_url) {
+//     for (let i = 0; i < presented_number; i++) {
 
-        if (retrieved_records_url[i] != undefined) {
-            let aD = document.getElementById((i+1).toString() + "AttachmentDiv");
+//         if (retrieved_records_url[i] != undefined) {
+//             let aD = document.getElementById((i+1).toString() + "AttachmentDiv");
 
-            let img = document.createElement("img");
-            img.id = (i+1).toString() + "pic";
-            img.alt = "No Pic Attachments";
-            aD.appendChild(img);
+//             let img = document.createElement("img");
+//             img.id = (i+1).toString() + "pic";
+//             img.alt = "No Pic Attachments";
+//             aD.appendChild(img);
 
-            let thisUrl = retrieved_records_url[i][0].url;
-            console.log("rendering pic", thisUrl);
-            img.src = thisUrl.toString();
-        }
-    }
-}
+//             let thisUrl = retrieved_records_url[i][0].url;
+//             console.log("rendering pic", thisUrl);
+//             img.src = thisUrl.toString();
+//         }
+//     }
+// }
 
 function renderOriginalWords(retrievedOriginalRecordContent) {
     for (let i = 0; i < presented_original_num; i++) {

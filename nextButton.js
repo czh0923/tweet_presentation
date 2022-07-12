@@ -21,11 +21,6 @@ function clearChoiceButton() {
     }
 }
 
-
-function reloadPage() {
-    window.location.reload();
-}
-
 async function pressNext() {
 
     getParticipantInput();

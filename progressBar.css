@@ -10,8 +10,6 @@
 
 #progressBarInner {
     height: 100%;
-    /* width: 5%;  */
-    /* width need to be initialized in another way */
     background-color:cornflowerblue;
     border-radius: 7px;
 }
