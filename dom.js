@@ -87,13 +87,3 @@ function createFinalButton(finalButtonDiv) {
 }
  
 createMainPage(TWEETORIGINALDIV, TWEETLIKESDIV, CHOICEBUTTONDIV);
-
-window.onbeforeunload = closingCode;
-async function closingCode(){
-
-    url = "https://airtable-middle.herokuapp.com/restore/" + localStorage.getItem("tweetUserPrevVisitedTimes") + "/" + localStorage.getItem("tweetUserRecordIds");
-
-    await fetch(url);
-
-    return false;
-}
