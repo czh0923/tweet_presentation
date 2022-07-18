@@ -85,5 +85,8 @@ function createFinalButton(finalButtonDiv) {
 
     finalButtonDiv.appendChild(finalButton);
 }
+
  
 createMainPage(TWEETORIGINALDIV, TWEETLIKESDIV, CHOICEBUTTONDIV);
+
+
