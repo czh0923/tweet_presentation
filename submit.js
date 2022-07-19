@@ -7,5 +7,5 @@ async function submitData() {
     console.log(url);
     await fetch(url);
     console.log("submit and update complete");
-    //goToThanksPage();
+    goToThanksPage();
 }
