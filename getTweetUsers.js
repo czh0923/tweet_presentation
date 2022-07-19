@@ -1,4 +1,4 @@
-async function getLeastVisitedUser(presentedUserNumber) {
+async function getRandomUser(presentedUserNumber) {
 
     url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString()
     
@@ -7,18 +7,14 @@ async function getLeastVisitedUser(presentedUserNumber) {
 
     let tweetUserRecordIds = data.tweetUserRecordIds;
     let tweetUserNames = data.tweetUserNames;
-    let tweetUserIds = data.tweetUserIds;
-    let tweetUserPrevVisitedTimes = data.tweetUserPrevVisitedTimes;
 
-    console.log("getting tweet users", tweetUserRecordIds, tweetUserNames, tweetUserIds, tweetUserPrevVisitedTimes);
+    console.log(tweetUserRecordIds, tweetUserNames);
 
     localStorage.setItem("tweetUserRecordIds", JSON.stringify(tweetUserRecordIds));
     localStorage.setItem("tweetUserNames", JSON.stringify(tweetUserNames));
-    localStorage.setItem("tweetUserIds", JSON.stringify(tweetUserIds));
-    localStorage.setItem("tweetUserPrevVisitedTimes", JSON.stringify(tweetUserPrevVisitedTimes));
-    
-    
+
     getTweetsOfTheUser(tweetUserNames[0]);
+
 }
 
-getLeastVisitedUser(presented_user_number);
+getRandomUser(presented_user_number);
