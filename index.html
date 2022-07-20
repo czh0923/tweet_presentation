@@ -26,7 +26,7 @@
                         alert("You must enter an ID");
                         return;
                     }
-                    localStorage.setItem("participantID", participantIdInput);
+                    sessionStorage.setItem("participantID", participantIdInput);
                     document.location.href = "dom.html";
                 }
                 enterButton.addEventListener("click", clickEnterButton);

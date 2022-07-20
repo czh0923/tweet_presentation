@@ -19,7 +19,7 @@ const presented_user_number = 5;
 
 var curPageNum = 1;
 var participantInput = []
-const participantID = localStorage.getItem("participantID");
+const participantID = sessionStorage.getItem("participantID");
 var tweet_user_record_Ids = [];
 var tweet_user_names = [];
 var contents = {};
