@@ -44,4 +44,14 @@ async function getTweetsOfTheUser(userName) {
     // rendering words
     renderOriginalWords(retrievedOriginalRecordContent);
     renderLikesWords(retrievedLikesRecordContent);
+
+    contents[userName] = {retrievedOriginalRecordContent, retrievedLikesRecordContent}
+
+}
+
+async function presentTweetsOfTheUser(userName) {
+    let {retrievedOriginalRecordContent, retrievedLikesRecordContent} = contents[userName];
+
+    renderOriginalWords(retrievedOriginalRecordContent);
+    renderLikesWords(retrievedLikesRecordContent);
 }

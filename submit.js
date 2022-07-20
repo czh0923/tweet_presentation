@@ -1,7 +1,7 @@
 
 async function submitData() {
 
-    url = "https://airtable-middle.herokuapp.com/submit/" + localStorage.getItem("tweetUserRecordIds") + 
+    url = "https://airtable-middle.herokuapp.com/submit/" + JSON.stringify(tweet_user_record_Ids) + 
     "/" + JSON.stringify(participantInput) + "/" + participantID;
 
     console.log(url);

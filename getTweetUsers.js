@@ -8,12 +8,13 @@ async function getRandomUser(presentedUserNumber) {
     let tweetUserRecordIds = data.tweetUserRecordIds;
     let tweetUserNames = data.tweetUserNames;
 
-    console.log(tweetUserRecordIds, tweetUserNames);
+    tweet_user_record_Ids = [...tweetUserRecordIds];
+    tweet_user_names = [...tweetUserNames];
 
-    localStorage.setItem("tweetUserRecordIds", JSON.stringify(tweetUserRecordIds));
-    localStorage.setItem("tweetUserNames", JSON.stringify(tweetUserNames));
+    console.log(tweet_user_record_Ids, tweet_user_names);
 
-    getTweetsOfTheUser(tweetUserNames[0]);
+    getTweetsOfTheUser(tweet_user_names[0]);
+
 
 }
 
