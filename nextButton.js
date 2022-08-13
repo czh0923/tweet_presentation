@@ -5,18 +5,26 @@ function getParticipantInput(index, clickBack) {
     let buttonSelected = document.querySelector("input[name='Choices']:checked");
     if (buttonSelected == null && !clickBack) {
         alert("Must select one");
+        return false;
     } 
 
-    if (buttonSelected == null) {
-        return;
+    // if (buttonSelected == null) {
+    //     return false;
+    // }
+
+    if (buttonSelected != null) {
+
+        if (participantInput.length <= index) {
+            participantInput.push(buttonSelected.value);
+        } else {
+            participantInput[index] = buttonSelected.value;
+        }
+        console.log(participantInput);
+        //return true;
+
     }
 
-    if (participantInput.length <= index) {
-        participantInput.push(buttonSelected.value);
-    } else {
-        participantInput[index] = buttonSelected.value;
-    }
-    console.log(participantInput);
+    return true;
 }
 
 function progressBarChange(curPageNum) {
@@ -39,7 +47,9 @@ function renderButton(index) {
 
 async function pressNext() {
 
-    getParticipantInput(curPageNum - 1, false);
+    if (!getParticipantInput(curPageNum - 1, false)) {
+        return;
+    }
 
     if (curPageNum == presented_user_number - 1) {
         finalButton.innerHTML = "Submit";
@@ -62,7 +72,13 @@ async function pressNext() {
 
 async function pressBack() {
 
-    getParticipantInput(curPageNum - 1, true);
+    if (curPageNum == 1) {
+        return;
+    }
+
+    if (!getParticipantInput(curPageNum - 1, true)) {
+        return;
+    }
 
     finalButton.innerHTML = "Next";
 
