@@ -2,8 +2,8 @@
 const presented_number = 10;
 const presented_original_num = 5;
 const presented_likes_num = 5;
-const buttonNames = ["D", "R", "I", "O"];
-const buttonValues = ["Democrat", "Republican", "Independent", "Other"];
+const buttonNames = ["D", "R", "I", "O", "IDK"];
+const buttonValues = ["Democrat", "Republican", "Independent", "Other (libertarian party)", "Can't Tell"];
 
 // html elements
 const progressBarInner = document.getElementById("progressBarInner");

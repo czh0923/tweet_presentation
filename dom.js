@@ -10,7 +10,7 @@ function createMainPage(tweetOriginalDiv, tweetLikesDiv, choiceButtonDiv) {
         createSingleLikesTweetDiv(tweetLikesDiv, i + 1);
     }
 
-    createFourButtons(choiceButtonDiv);
+    createFiveButtons(choiceButtonDiv);
 }
 
 function createSingleOriginalTweetDiv(tweetOriginalDiv, i) {
@@ -32,7 +32,7 @@ function createSingleLikesTweetDiv(tweetLikesDiv, i) {
 }
 
 
-function createFourButtons(choiceButtonDiv) {
+function createFiveButtons(choiceButtonDiv) {
     // <div id="choiceButtonDiv">
     //    <div class="single_button_div">
     //         <input></input>
