@@ -32,7 +32,7 @@ function renderLikesWords(retrievedLikedRecordContent) {
 
 // getting tweets and presenting on the webpage
 
-async function getTweetsOfTheUser(userName) {
+async function getTweetsOfTheUser(userName, curPageNum) {
     let url = "https://airtable-middle.herokuapp.com/get/" + userName + "/" + presented_original_num.toString() + "/" + presented_likes_num.toString();
     
     let res = await fetch(url);
@@ -45,12 +45,12 @@ async function getTweetsOfTheUser(userName) {
     renderOriginalWords(retrievedOriginalRecordContent);
     renderLikesWords(retrievedLikesRecordContent);
 
-    contents[userName] = {retrievedOriginalRecordContent, retrievedLikesRecordContent}
+    contents[curPageNum] = {retrievedOriginalRecordContent, retrievedLikesRecordContent}
 
 }
 
-async function presentTweetsOfTheUser(userName) {
-    let {retrievedOriginalRecordContent, retrievedLikesRecordContent} = contents[userName];
+async function presentTweetsOfTheUser(curPageNum) {
+    let {retrievedOriginalRecordContent, retrievedLikesRecordContent} = contents[curPageNum];
 
     renderOriginalWords(retrievedOriginalRecordContent);
     renderLikesWords(retrievedLikesRecordContent);

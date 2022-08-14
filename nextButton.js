@@ -1,7 +1,9 @@
 FINALBUTTON.addEventListener("click", pressNext);
 BACKBUTTON.addEventListener("click", pressBack);
 
-function getParticipantInput(index, clickBack) {
+function getParticipantInput(curPageNum, clickBack) {
+
+    let index = curPageNum - 1;
     let buttonSelected = document.querySelector("input[name='Choices']:checked");
     if (buttonSelected == null && !clickBack) {
         alert("Must select one");
@@ -39,15 +41,15 @@ function clearChoiceButton() {
     }
 }
 
-function renderButton(index) {
-    let buttonValue = participantInput[index];
+function renderButton(curPageNum) {
+    let buttonValue = participantInput[curPageNum - 1];
     let button = document.getElementById(buttonValue[0]);
     button.checked = true;
 }
 
 async function pressNext() {
 
-    if (!getParticipantInput(curPageNum - 1, false)) {
+    if (!getParticipantInput(curPageNum, false)) {
         return;
     }
 
@@ -59,10 +61,16 @@ async function pressNext() {
     } 
 
     curPageNum += 1;
-    getTweetsOfTheUser(tweet_user_names[curPageNum - 1]);
+    if (contents[curPageNum] != null) {
+        console.log("here1")
+        presentTweetsOfTheUser(curPageNum);
+    } else {
+        console.log("here2")
+        getTweetsOfTheUser(tweet_user_names[curPageNum - 1], curPageNum);
+    }
 
     if (participantInput.length >= curPageNum) {
-        renderButton(curPageNum - 1);
+        renderButton(curPageNum);
     } else {
         clearChoiceButton();
     }
@@ -76,15 +84,15 @@ async function pressBack() {
         return;
     }
 
-    if (!getParticipantInput(curPageNum - 1, true)) {
+    if (!getParticipantInput(curPageNum, true)) {
         return;
     }
 
     finalButton.innerHTML = "Next";
 
     curPageNum -= 1;
-    presentTweetsOfTheUser(tweet_user_names[curPageNum - 1]);
+    presentTweetsOfTheUser(curPageNum);
 
-    renderButton(curPageNum - 1);
+    renderButton(curPageNum);
     progressBarChange(curPageNum);
 }

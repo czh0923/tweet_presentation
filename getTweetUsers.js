@@ -13,7 +13,7 @@ async function getRandomUser(presentedUserNumber) {
 
     console.log(tweet_user_record_Ids, tweet_user_names);
 
-    getTweetsOfTheUser(tweet_user_names[0]);
+    getTweetsOfTheUser(tweet_user_names[0], 1);
 
 
 }
