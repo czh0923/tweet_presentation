@@ -56,16 +56,15 @@ async function pressNext() {
     if (curPageNum == presented_user_number - 1) {
         finalButton.innerHTML = "Submit";
     } else if (curPageNum == presented_user_number) {
+        finalButton.disabled = true;
         await submitData();
         return;
     } 
 
     curPageNum += 1;
     if (contents[curPageNum] != null) {
-        console.log("here1")
         presentTweetsOfTheUser(curPageNum);
     } else {
-        console.log("here2")
         getTweetsOfTheUser(tweet_user_names[curPageNum - 1], curPageNum);
     }
 
