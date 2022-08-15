@@ -13,9 +13,10 @@ async function getRandomUser(presentedUserNumber) {
 
     console.log(tweet_user_record_Ids, tweet_user_names);
 
-    getTweetsOfTheUser(tweet_user_names[0], 1);
+
+    sessionStorage.setItem("tweetUserRecordIds", JSON.stringify(tweet_user_record_Ids));
+    sessionStorage.setItem("tweetUserNames", JSON.stringify(tweet_user_names));
 
 
 }
 
-getRandomUser(presented_user_number);

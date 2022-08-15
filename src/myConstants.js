@@ -22,8 +22,8 @@ const presented_user_number = 5;
 var curPageNum = 1;
 var participantInput = []
 const participantID = sessionStorage.getItem("participantID");
-var tweet_user_record_Ids = [];
-var tweet_user_names = [];
+var tweet_user_record_Ids = JSON.parse(sessionStorage.getItem("tweetUserRecordIds"));
+var tweet_user_names = JSON.parse(sessionStorage.getItem("tweetUserNames"));
 var contents = {};
 
 

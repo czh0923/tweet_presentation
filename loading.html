@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Loading </title>
+        <style>
+            .load-div {
+                position:absolute;
+                left:49%;
+                top:20%;
+            }
+
+            .load-word {
+                font-size: 20px;
+            }
+
+
+            .loader {
+                
+                border: 8px solid #f3f3f3; /* Light grey */
+                border-top: 8px solid cornflowerblue; /* Blue */
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 2s linear infinite;
+
+                margin-right: 10px;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="load-div">
+            <div class="loader"> </div>
+            <p class="load-word"> Loading... </p>
+        </div>
+
+
+        <div>
+            <script src="./src/getTweetUsers.js"></script>
+            <script src="./src/getData.js"></script>
+
+            <script type="text/javascript">
+
+                async function helper() {
+
+                    await getRandomUser(5);
+
+                    document.location.href = "dom.html";
+
+                }
+                
+                helper()
+                
+            </script>
+        </div>
+
+    </body>
+</html>

@@ -89,4 +89,4 @@ function createFinalButton(finalButtonDiv) {
  
 createMainPage(TWEETORIGINALDIV, TWEETLIKESDIV, CHOICEBUTTONDIV);
 
-
+getTweetsOfTheUser(tweet_user_names[0], 1);
