@@ -63,6 +63,7 @@ async function pressNext() {
 
     curPageNum += 1;
 
+    console.log("curpagenum", curPageNum);
     getTweetsWithPageNum(curPageNum);
 
     // if (contents[curPageNum] != null) {

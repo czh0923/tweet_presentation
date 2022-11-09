@@ -51,6 +51,8 @@
 
 function getTweetsWithPageNum(curPageNum) {
 
+    curPageNum -= 1;
+
     let tweets = [];
     let types = [];
 
