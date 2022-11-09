@@ -62,11 +62,14 @@ async function pressNext() {
     } 
 
     curPageNum += 1;
-    if (contents[curPageNum] != null) {
-        presentTweetsOfTheUser(curPageNum);
-    } else {
-        getTweetsOfTheUser(tweet_user_names[curPageNum - 1], curPageNum);
-    }
+
+    getTweetsWithPageNum(curPageNum);
+
+    // if (contents[curPageNum] != null) {
+    //     presentTweetsOfTheUser(curPageNum);
+    // } else {
+    //     getTweetsOfTheUser(tweet_user_names[curPageNum - 1], curPageNum);
+    // }
 
     if (participantInput.length >= curPageNum) {
         renderButton(curPageNum);
@@ -90,7 +93,8 @@ async function pressBack() {
     finalButton.innerHTML = "Next";
 
     curPageNum -= 1;
-    presentTweetsOfTheUser(curPageNum);
+    getTweetsWithPageNum(curPageNum)
+    //presentTweetsOfTheUser(curPageNum);
 
     renderButton(curPageNum);
     progressBarChange(curPageNum);

@@ -2,13 +2,26 @@
 function createMainPage(tweetOriginalDiv, tweetLikesDiv, choiceButtonDiv) {
     progressBarInner.style.width = (curPageNum / presented_user_number * 100).toString() + "%";
 
-    for (let i = 0; i < presented_original_num; i++) {
-        createSingleOriginalTweetDiv(tweetOriginalDiv, i + 1);
-    }
+    for (let i = 0; i < 10; i++) {
+        //createSingleOriginalTweetDiv(tweetOriginalDiv, i + 1);
 
-    for (let i = 0; i < presented_likes_num; i++) {
-        createSingleLikesTweetDiv(tweetLikesDiv, i + 1);
+
+        let p = document.createElement("p");
+        p.id = (i+1).toString() + "Tweet";
+        tweetOriginalDiv.appendChild(p);
+    
+        let hr = document.createElement("hr");
+        tweetOriginalDiv.appendChild(hr);
     }
+    
+
+    // for (let i = 0; i < presented_original_num; i++) {
+    //     createSingleOriginalTweetDiv(tweetOriginalDiv, i + 1);
+    // }
+
+    // for (let i = 0; i < presented_likes_num; i++) {
+    //     createSingleLikesTweetDiv(tweetLikesDiv, i + 1);
+    // }
 
     createFiveButtons(choiceButtonDiv);
 }
@@ -89,4 +102,6 @@ function createFinalButton(finalButtonDiv) {
  
 createMainPage(TWEETORIGINALDIV, TWEETLIKESDIV, CHOICEBUTTONDIV);
 
-getTweetsOfTheUser(tweet_user_names[0], 1);
+//getTweetsOfTheUser(tweet_user_names[0], 1);
+
+getTweetsWithPageNum(1);

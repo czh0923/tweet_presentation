@@ -24,6 +24,8 @@ var participantInput = []
 const participantID = sessionStorage.getItem("participantID");
 var tweet_user_record_Ids = JSON.parse(sessionStorage.getItem("tweetUserRecordIds"));
 var tweet_user_names = JSON.parse(sessionStorage.getItem("tweetUserNames"));
+var tweets_content = JSON.parse(sessionStorage.getItem("tweets"));
+var tweets_types = JSON.parse(sessionStorage.getItem("types"));
 var contents = {};
 
 
