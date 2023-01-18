@@ -62,7 +62,8 @@ function getTweetsWithPageNum(curPageNum) {
     }
 
     for (let i = 0; i < tweets.length; i++) {
-        document.getElementById((i+1).toString() + "Tweet").innerHTML = (i+1).toString() + ". " + tweets[i]; 
+
+        document.getElementById((i+1).toString() + "Tweet").innerHTML = (i+1).toString() + ". " + types[i] + ": " + tweets[i]; 
     }
 
 }
