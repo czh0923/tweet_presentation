@@ -17,7 +17,7 @@ const FINALBUTTON = document.getElementById("finalButton");
 const BACKBUTTON = document.getElementById("backButton");
 
 
-const presented_user_number = 5;
+const presented_user_number = 2;
 
 var curPageNum = 1;
 var participantInput = []
