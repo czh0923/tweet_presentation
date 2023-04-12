@@ -42,12 +42,13 @@
         <div>
             <script src="./src/getTweetUsers.js"></script>
             <script src="./src/getData.js"></script>
+            <script src="./src/myConstants.js"></script>
 
             <script type="text/javascript">
 
                 async function helper() {
 
-                    await getRandomUser(5);
+                    await getRandomUser(presented_user_number);
 
                     document.location.href = "dom.html";
 
