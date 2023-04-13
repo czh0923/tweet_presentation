@@ -15,11 +15,12 @@ body {
     /* letter-spacing: 1px; */
 }
 
+
 .vertical-line {
     position: absolute;
     top: 5%;
     bottom: 5%;
-    left: 50%;
+    left: 60%;
     border-left: 1px solid gray; /* Change color and width as desired */
 }
 
@@ -29,9 +30,9 @@ body {
     /* margin-top: 30%;
     margin-left: 30%; */
 
-    width: 40%;
+    width: 50%;
     position:absolute;
-    top: 10%;
+    top: 5%;
     left: 5%;
     /* transform: translate(-50%, -50%); */
 }
@@ -43,7 +44,7 @@ body {
 
     position: absolute;
     top: 50%;
-    left: 70%;
+    left: 75%;
     transform: translate(-50%, -50%);
 }
 
