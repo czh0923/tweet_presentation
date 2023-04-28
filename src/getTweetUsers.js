@@ -1,6 +1,6 @@
 async function getRandomUser(presentedUserNumber) {
 
-    url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString()
+    url = "https://airtable-middle.herokuapp.com/getTwitterUser/" + presentedUserNumber.toString() + "/" + participantID;
     
     let res = await fetch(url);
     let data = await res.json();
