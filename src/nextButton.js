@@ -63,7 +63,7 @@ async function pressNext() {
 
     curPageNum += 1;
 
-    console.log("curpagenum", curPageNum);
+    //console.log("curpagenum", curPageNum);
     getTweetsWithPageNum(curPageNum);
 
     // if (contents[curPageNum] != null) {
@@ -78,6 +78,8 @@ async function pressNext() {
         clearChoiceButton();
     }
     progressBarChange(curPageNum);
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
 
 }
 
@@ -99,4 +101,6 @@ async function pressBack() {
 
     renderButton(curPageNum);
     progressBarChange(curPageNum);
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
